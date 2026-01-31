@@ -17,7 +17,7 @@ export default function ValuesSection() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
                     {/* Card 1: Wide */}
                     <div className="md:col-span-2 relative group p-8 rounded-2xl border border-white/10 bg-linear-to-br from-white/[0.03] to-transparent overflow-hidden hover:border-white/20 transition-all">
-                        <div className="absolute inset-0 bg-grid opacity-0 group-hover:opacity-20 transition-opacity" />
+                        <div className="absolute inset-0 bg-grid-small opacity-0 group-hover:opacity-20 transition-opacity" />
                         <div className="relative z-10 h-full flex flex-col justify-between">
                             <div className="w-12 h-12 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
                                 <Icon icon="solar:leaf-linear" width="24" />
@@ -73,7 +73,7 @@ export default function ValuesSection() {
 
                     {/* Card 4: Wide */}
                     <div className="md:col-span-2 relative group p-8 rounded-2xl border border-white/10 bg-linear-to-br from-white/[0.03] to-transparent overflow-hidden hover:border-white/20 transition-all">
-                        <div className="absolute inset-0 bg-grid opacity-0 group-hover:opacity-20 transition-opacity" />
+                        <div className="absolute inset-0 bg-grid-small opacity-0 group-hover:opacity-20 transition-opacity" />
                         <div className="relative z-10 h-full flex flex-col justify-between">
                             <div className="w-12 h-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
                                 <Icon icon="solar:hand-shake-linear" width="24" />

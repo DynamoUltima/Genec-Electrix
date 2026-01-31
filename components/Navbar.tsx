@@ -1,40 +1,49 @@
+"use client";
+
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 export default function Navbar() {
+    const pathname = usePathname();
+
+    const isActive = (path: string) => {
+        return pathname === path ? "text-white" : "text-slate-400";
+    };
+
     return (
-        <nav className="fixed top-0 w-full z-40 border-b border-white/5 bg-slate-950/80 backdrop-blur-md">
+        <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-slate-950/80 backdrop-blur-md">
             <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                 <Link
-                    href="#"
+                    href="/"
                     className="text-xl font-semibold tracking-tighter text-white hover:text-cyan-400 transition-colors"
                 >
                     GENEC
                 </Link>
 
-                <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-400">
+                <div className="hidden md:flex items-center space-x-8 text-sm font-medium">
                     <Link
                         href="/services"
-                        className="text-white hover:text-cyan-400 transition-colors"
+                        className={`${isActive("/services")} hover:text-white transition-colors`}
                     >
                         Services
                     </Link>
                     <Link
                         href="/projects"
-                        className="text-white hover:text-cyan-400 transition-colors"
+                        className={`${isActive("/projects")} hover:text-white transition-colors`}
                     >
                         Projects
                     </Link>
                     <Link
                         href="/company"
-                        className="text-white hover:text-cyan-400 transition-colors"
+                        className={`${isActive("/company")} hover:text-white transition-colors`}
                     >
                         Company
                     </Link>
                     <Link
                         href="/careers"
-                        className="text-white hover:text-cyan-400 transition-colors"
+                        className={`${isActive("/careers")} hover:text-white transition-colors`}
                     >
                         Careers
                     </Link>

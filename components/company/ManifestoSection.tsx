@@ -9,7 +9,7 @@ export default function ManifestoSection() {
                     <div className="order-2 lg:order-1 relative">
                         {/* Abstract Graphic representing the company structure */}
                         <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-slate-900 aspect-[4/3] group">
-                            <div className="absolute inset-0 bg-grid opacity-30" />
+                            <div className="absolute inset-0 bg-grid-small opacity-30" />
 
                             {/* Stylized decorative elements */}
                             <div className="absolute inset-0 flex items-center justify-center">
