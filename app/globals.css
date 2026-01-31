@@ -1,26 +1,117 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  background: #09090b;
+  color: #ededed;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand-cyan: #22d3ee;
+  --color-brand-bg: #09090b;
 }
 
 body {
-  background: var(--background);
+  font-family: var(--font-inter), sans-serif;
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom Background Pattern */
+.bg-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center,
+      black 40%,
+      transparent 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+
+/* Subtle Text Selection */
+::selection {
+  background: rgba(34, 211, 238, 0.2);
+  color: #22d3ee;
+}
+
+/* Modal Animation Utilities */
+.modal-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  transform: scale(0.95) translateY(10px);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-out;
+}
+
+.modal-backdrop.active .modal-content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* View Transition Utilities */
+.view-section {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hidden-view {
+  display: none !important;
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.fade-in-view {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CSS Graph Bars Animation */
+@keyframes growBar {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: var(--h);
+  }
+}
+
+.graph-bar {
+  animation: growBar 1s ease-out forwards;
+}
+
+/* Custom Checkbox/Radio for Wizard - handled via Tailwind peer classes in components but kept here just in case */
