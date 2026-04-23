@@ -31,7 +31,7 @@ export default function FeaturesSection() {
                                 Nordic Offshore Wind Link
                             </h3>
                             <p className="text-slate-400 max-w-md">
-                                Engineering the HVDC converter stations for one of the world's
+                                Engineering the HVDC converter stations for one of the world&apos;s
                                 largest offshore wind farms, delivering 1.2GW of clean energy to
                                 the mainland grid.
                             </p>

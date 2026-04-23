@@ -3,7 +3,9 @@ import {
   getDocs, 
   query, 
   orderBy, 
-  limit as firestoreLimit 
+  limit as firestoreLimit,
+  type QueryDocumentSnapshot,
+  type DocumentData
 } from "firebase/firestore";
 import { db } from "./firebase";
 import { type SupplyProduct } from "@/components/IndustrialSupply";
@@ -13,7 +15,7 @@ const COLLECTION_NAME = "inventory";
 /**
  * Maps a Firestore product document to the SupplyProduct interface used in the UI.
  */
-function mapProduct(doc: any): SupplyProduct {
+function mapProduct(doc: QueryDocumentSnapshot<DocumentData>): SupplyProduct {
   const data = doc.data();
   return {
     id: doc.id,

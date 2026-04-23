@@ -24,7 +24,7 @@ export default function CompanyHero() {
 
                     <p className="text-lg md:text-xl text-slate-400 max-w-2xl font-light leading-relaxed">
                         We are a collective of engineers, data scientists, and strategists
-                        dedicated to modernizing the world's energy infrastructure. We
+                        dedicated to modernizing the world&apos;s energy infrastructure. We
                         bridge the gap between legacy systems and the renewable grid.
                     </p>
                 </div>

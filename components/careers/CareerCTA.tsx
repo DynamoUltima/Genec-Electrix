@@ -12,7 +12,7 @@ export default function CareerCTA() {
                     <Icon icon="lucide:sparkles" className="text-cyan-400" width="28" />
                 </div>
                 <h2 className="text-3xl font-medium text-white tracking-tight mb-4">
-                    Don't see your role?
+                    Don&apos;t see your role?
                 </h2>
                 <p className="text-slate-400 mb-8 max-w-lg mx-auto leading-relaxed">
                     We are always looking for exceptional talent to help us modernize the

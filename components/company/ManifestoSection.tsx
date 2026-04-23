@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import React from "react";
+import Image from "next/image";
 
 export default function ManifestoSection() {
     return (
@@ -20,10 +21,11 @@ export default function ManifestoSection() {
                                 <div className="absolute w-64 h-px bg-linear-to-r from-transparent via-indigo-500/50 to-transparent -rotate-45" />
                             </div>
 
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2301&auto=format&fit=crop"
                                 alt="Office"
-                                className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50 grayscale transition-filter duration-300 group-hover:grayscale-0"
+                                fill
+                                className="absolute inset-0 object-cover mix-blend-overlay opacity-50 grayscale transition-[filter] duration-300 group-hover:grayscale-0"
                             />
 
                             <div className="absolute bottom-6 left-6 right-6 p-4 bg-slate-950/80 backdrop-blur border border-white/10 rounded-xl">
@@ -60,8 +62,8 @@ export default function ManifestoSection() {
                                 the energy transition.
                             </p>
                             <p>
-                                We believe that the future of energy isn't just about new
-                                sources—it's about intelligent integration. Our team combines
+                                We believe that the future of energy isn&apos;t just about new
+                                sources—it&apos;s about intelligent integration. Our team combines
                                 deep domain expertise in power systems with modern computation
                                 to solve problems others walk away from.
                             </p>

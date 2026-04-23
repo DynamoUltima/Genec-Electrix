@@ -157,7 +157,7 @@ export default function CaseStudiesModal({
                             {/* Footer */}
                             <div className="p-4 border-t border-white/5 bg-white/2 flex justify-between items-center">
                                 <span className="text-xs text-slate-500">
-                                    Press 'ESC' to close
+                                    Press &apos;ESC&apos; to close
                                 </span>
                                 <button
                                     className="text-xs font-medium text-slate-300 hover:text-white transition-colors cursor-pointer"

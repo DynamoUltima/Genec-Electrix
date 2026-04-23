@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import React from "react";
+import Image from "next/image";
 
 export default function LeadershipTeam() {
     return (
@@ -61,10 +62,11 @@ function TeamMember({
     return (
         <div className="group">
             <div className="aspect-square rounded-xl overflow-hidden bg-slate-900 border border-white/10 mb-4 relative">
-                <img
+                <Image
                     src={image}
                     alt={name}
-                    className="w-full h-full object-cover grayscale transition-filter duration-300 group-hover:grayscale-0"
+                    fill
+                    className="object-cover grayscale transition-[filter] duration-300 group-hover:grayscale-0"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                     <div className="flex gap-2">

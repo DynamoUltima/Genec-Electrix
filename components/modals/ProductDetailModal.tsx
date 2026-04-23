@@ -14,11 +14,9 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
     const [quantity, setQuantity] = useState(1);
     const [showFeedback, setShowFeedback] = useState(false);
 
-    // Reset state on open
+    // Sync body scroll lock and reset state when modal opens/closes
     useEffect(() => {
         if (isOpen) {
-            setQuantity(1);
-            setShowFeedback(false);
             document.body.style.overflow = "hidden";
         } else {
             document.body.style.overflow = "auto";
@@ -26,6 +24,16 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
         return () => {
             document.body.style.overflow = "auto";
         };
+    }, [isOpen]);
+
+    // Reset quantity and feedback when modal opens (deferred to avoid cascading renders)
+    useEffect(() => {
+        if (!isOpen) return;
+        const id = setTimeout(() => {
+            setQuantity(1);
+            setShowFeedback(false);
+        }, 0);
+        return () => clearTimeout(id);
     }, [isOpen]);
 
     if (!isOpen || !product) return null;

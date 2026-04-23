@@ -23,7 +23,7 @@ export default function ProjectsHero({
                             Selected Works
                         </h1>
                         <p className="text-lg text-slate-400 max-w-xl font-light">
-                            Explore how we've powered infrastructure across the globe, from
+                            Explore how we&apos;ve powered infrastructure across the globe, from
                             renewable energy integration to industrial automation.
                         </p>
                     </div>

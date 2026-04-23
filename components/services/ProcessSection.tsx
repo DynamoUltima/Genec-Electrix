@@ -1,4 +1,3 @@
-import { Icon } from "@iconify/react";
 import React from "react";
 
 export default function ProcessSection() {
@@ -15,7 +14,7 @@ export default function ProcessSection() {
                         </h2>
                         <p className="text-slate-400 font-light mb-8 leading-relaxed">
                             Our methodology combines advanced simulation tools with practical
-                            field experience. We don't just design; we validate every
+                            field experience. We don&apos;t just design; we validate every
                             parameter to ensure operational certainty.
                         </p>
 

@@ -64,7 +64,7 @@ export default function ValuesSection() {
                                     Radical Innovation
                                 </h3>
                                 <p className="text-slate-400 text-sm">
-                                    Challenging the "way it's always been done" with data-driven
+                                    Challenging the &ldquo;way it&apos;s always been done&rdquo; with data-driven
                                     engineering.
                                 </p>
                             </div>
