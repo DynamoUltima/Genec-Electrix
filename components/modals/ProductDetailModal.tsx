@@ -30,9 +30,7 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
 
     if (!isOpen || !product) return null;
 
-    const basePrice = typeof product.price === "string"
-        ? parseFloat(product.price.replace(/,/g, ""))
-        : (product.price || 0);
+    const basePrice = product.price || 0;
     const totalPrice = (basePrice * quantity).toLocaleString("en-US", {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
