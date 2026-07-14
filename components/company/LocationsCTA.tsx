@@ -9,60 +9,51 @@ export default function LocationsCTA() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-slate-900/50 rounded-3xl p-8 md:p-12 border border-white/5 items-center">
                     <div>
                         <h2 className="text-3xl font-medium text-white tracking-tight mb-4">
-                            Global Reach, Local Expertise
+                            Rooted in Ghana
                         </h2>
                         <p className="text-slate-400 mb-8">
-                            We operate out of four strategic hubs, allowing us to support
-                            projects across time zones and regulatory environments.
+                            Headquartered in Accra, we understand the local procurement
+                            environment, community dynamics, and regulatory frameworks that
+                            move projects forward across Ghana.
                         </p>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div className="flex items-start gap-3">
                                 <Icon
                                     icon="solar:map-point-linear"
-                                    className="text-cyan-400 mt-1"
+                                    className="text-cyan-400 mt-1 shrink-0"
                                 />
                                 <div>
                                     <div className="text-white font-medium text-sm">
-                                        London, UK
+                                        Accra, Ghana
                                     </div>
-                                    <div className="text-slate-500 text-xs">EMEA HQ</div>
+                                    <div className="text-slate-500 text-xs">Headquarters</div>
                                 </div>
                             </div>
                             <div className="flex items-start gap-3">
                                 <Icon
-                                    icon="solar:map-point-linear"
-                                    className="text-cyan-400 mt-1"
+                                    icon="solar:phone-linear"
+                                    className="text-cyan-400 mt-1 shrink-0"
                                 />
                                 <div>
                                     <div className="text-white font-medium text-sm">
-                                        Austin, TX
+                                        +233 24 383 9480
                                     </div>
-                                    <div className="text-slate-500 text-xs">Americas</div>
+                                    <div className="text-slate-500 text-xs">Telephone</div>
                                 </div>
                             </div>
-                            <div className="flex items-start gap-3">
+                            <div className="flex items-start gap-3 sm:col-span-2">
                                 <Icon
-                                    icon="solar:map-point-linear"
-                                    className="text-cyan-400 mt-1"
+                                    icon="solar:letter-linear"
+                                    className="text-cyan-400 mt-1 shrink-0"
                                 />
                                 <div>
-                                    <div className="text-white font-medium text-sm">
-                                        Singapore
+                                    <div className="text-white font-medium text-sm break-all">
+                                        info.genecelectrix@gmail.com
                                     </div>
-                                    <div className="text-slate-500 text-xs">APAC</div>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-3">
-                                <Icon
-                                    icon="solar:map-point-linear"
-                                    className="text-cyan-400 mt-1"
-                                />
-                                <div>
-                                    <div className="text-white font-medium text-sm">
-                                        Berlin, DE
+                                    <div className="text-slate-500 text-xs">
+                                        office.genec23@gmail.com
                                     </div>
-                                    <div className="text-slate-500 text-xs">Innovation Lab</div>
                                 </div>
                             </div>
                         </div>
@@ -73,14 +64,14 @@ export default function LocationsCTA() {
                             Work with us
                         </h3>
                         <p className="text-slate-400 text-sm mb-6">
-                            Start your next big project with a team that understands your
-                            goals.
+                            Start your next project with a team that delivers to international
+                            standards.
                         </p>
                         <Link
                             href="/#contact"
                             className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-white text-slate-950 font-semibold text-sm hover:bg-slate-200 transition-colors"
                         >
-                            Contact our Offices
+                            Get in Touch
                             <Icon icon="solar:arrow-right-linear" />
                         </Link>
                     </div>

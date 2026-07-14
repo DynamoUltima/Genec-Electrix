@@ -9,7 +9,13 @@ export default function ProjectsHero({
     activeFilter,
     onFilterChange,
 }: ProjectsHeroProps) {
-    const filters = ["All", "Renewables", "Industrial", "Grid Scale"];
+    const filters = [
+        "All",
+        "Solar & Energy",
+        "MEP & Buildings",
+        "Electrical",
+        "Infrastructure",
+    ];
 
     return (
         <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
@@ -23,8 +29,8 @@ export default function ProjectsHero({
                             Selected Works
                         </h1>
                         <p className="text-lg text-slate-400 max-w-xl font-light">
-                            Explore how we&apos;ve powered infrastructure across the globe, from
-                            renewable energy integration to industrial automation.
+                            A track record spanning solar energy, MEP-intensive buildings,
+                            hospitals, and public infrastructure across Ghana.
                         </p>
                     </div>
 

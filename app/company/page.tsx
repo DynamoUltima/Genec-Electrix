@@ -7,6 +7,7 @@ import CompanyStats from "@/components/company/CompanyStats";
 import ManifestoSection from "@/components/company/ManifestoSection";
 import ValuesSection from "@/components/company/ValuesSection";
 import LeadershipTeam from "@/components/company/LeadershipTeam";
+import AffiliationsSection from "@/components/company/AffiliationsSection";
 import LocationsCTA from "@/components/company/LocationsCTA";
 
 export default function CompanyPage() {
@@ -19,6 +20,7 @@ export default function CompanyPage() {
                 <ManifestoSection />
                 <ValuesSection />
                 <LeadershipTeam />
+                <AffiliationsSection />
                 <LocationsCTA />
             </main>
             <Footer />

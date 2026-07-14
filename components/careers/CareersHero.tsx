@@ -1,9 +1,11 @@
 import React from "react";
+import HeroBanner from "@/components/HeroBanner";
 
 export default function CareersHero() {
     return (
         <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden border-b border-white/5">
-            <div className="absolute inset-0 bg-grid z-0 pointer-events-none" />
+            <HeroBanner />
+            <div className="absolute inset-0 bg-grid z-0 pointer-events-none opacity-40" />
             {/* Abstract gradient blob */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-900/10 blur-[120px] rounded-full pointer-events-none" />
 

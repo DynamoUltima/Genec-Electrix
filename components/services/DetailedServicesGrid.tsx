@@ -1,6 +1,125 @@
 import { Icon } from "@iconify/react";
 import React from "react";
 
+type Service = {
+    icon: string;
+    title: string;
+    description: string;
+    points: string[];
+    color: string;
+};
+
+const SERVICES: Service[] = [
+    {
+        icon: "lucide:zap",
+        title: "Electrical & Power Systems",
+        description:
+            "Design and supervision of HV/LV power distribution, grid connection, standby generation, and building electrical systems.",
+        points: [
+            "HV/MV/LV distribution design",
+            "Earthing & lightning protection",
+            "Switchgear, ATS & distribution boards",
+        ],
+        color: "cyan",
+    },
+    {
+        icon: "lucide:thermometer",
+        title: "Mechanical & MEP Engineering",
+        description:
+            "Full mechanical building services — HVAC, plumbing, fire-fighting, and integrated MEP coordination.",
+        points: [
+            "HVAC design & optimisation (ASHRAE)",
+            "Plumbing & fire-fighting systems",
+            "Sewage Treatment Plants (STP)",
+        ],
+        color: "blue",
+    },
+    {
+        icon: "lucide:sun",
+        title: "Renewable Energy & Solar PV",
+        description:
+            "Solar PV system design, energy-efficiency analysis, and commissioning oversight from residential to utility scale.",
+        points: [
+            "Solar PV design (up to utility scale)",
+            "Battery storage & backup power",
+            "Energy efficiency audits",
+        ],
+        color: "emerald",
+    },
+    {
+        icon: "lucide:clipboard-list",
+        title: "Project & Contract Management",
+        description:
+            "PMP-certified project management with programme scheduling, risk control, and FIDIC contract administration.",
+        points: [
+            "Programme scheduling & KPI tracking",
+            "Risk registers & escalation matrices",
+            "FIDIC claims administration",
+        ],
+        color: "orange",
+    },
+    {
+        icon: "lucide:hard-hat",
+        title: "Construction Supervision",
+        description:
+            "Acting as the Engineer under FIDIC — site instructions, variation orders, and interim payment certification.",
+        points: [
+            "Resident site supervision",
+            "Non-conformance management",
+            "Interim payment certificates",
+        ],
+        color: "purple",
+    },
+    {
+        icon: "lucide:activity",
+        title: "Testing, Commissioning & Handover",
+        description:
+            "Structured testing and commissioning of all systems, culminating in formal handover with full documentation.",
+        points: [
+            "SAT/FAT execution",
+            "As-built documentation",
+            "O&M manuals & training",
+        ],
+        color: "rose",
+    },
+    {
+        icon: "lucide:file-search",
+        title: "Design Review",
+        description:
+            "Independent, code-benchmarked review of infrastructure design documents against international standards.",
+        points: [
+            "Compliance with IEC / BS / ICAO codes",
+            "Constructability & value engineering",
+            "Stage-gate review & approvals",
+        ],
+        color: "cyan",
+    },
+    {
+        icon: "lucide:leaf",
+        title: "Environmental & HSE Management",
+        description:
+            "Environmental impact management and HSE compliance aligned with Ghana EPA and IFC Performance Standards.",
+        points: [
+            "EPA Environmental Management Plans",
+            "HSE induction & monitoring",
+            "Community & stakeholder liaison",
+        ],
+        color: "emerald",
+    },
+    {
+        icon: "lucide:map",
+        title: "Master Planning & Feasibility",
+        description:
+            "Master plan and land-use review, demand forecasting, and feasibility studies for major capital projects.",
+        points: [
+            "Master plan & land-use review",
+            "20-year demand forecasting",
+            "Lifecycle cost analysis",
+        ],
+        color: "blue",
+    },
+];
+
 export default function DetailedServicesGrid() {
     return (
         <section className="py-24 relative">
@@ -18,77 +137,9 @@ export default function DetailedServicesGrid() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <ServiceCard
-                        icon="lucide:zap"
-                        title="Power Systems Analysis"
-                        description="Comprehensive grid modelling and simulation to ensure stability and compliance with regulatory standards."
-                        points={[
-                            "Load flow & fault analysis",
-                            "Arc flash studies",
-                            "Protection coordination",
-                        ]}
-                        color="cyan"
-                    />
-
-                    <ServiceCard
-                        icon="lucide:wind"
-                        title="Renewable Integration"
-                        description="Seamlessly connecting solar, wind, and BESS assets to the grid with optimized control strategies."
-                        points={[
-                            "Grid connection applications",
-                            "PPC design & commissioning",
-                            "Harmonic analysis",
-                        ]}
-                        color="purple"
-                    />
-
-                    <ServiceCard
-                        icon="lucide:cpu"
-                        title="Automation & Control"
-                        description="Designing intelligent SCADA and PLC systems for industrial efficiency and real-time monitoring."
-                        points={[
-                            "SCADA architecture design",
-                            "PLC programming (IEC 61131)",
-                            "HMI development",
-                        ]}
-                        color="emerald"
-                    />
-
-                    <ServiceCard
-                        icon="lucide:ruler"
-                        title="Detailed Engineering"
-                        description="Complete electrical design packages from concept to construction drawings."
-                        points={[
-                            "HV/MV/LV Schematics",
-                            "Cable scheduling & sizing",
-                            "Earthing system design",
-                        ]}
-                        color="orange"
-                    />
-
-                    <ServiceCard
-                        icon="lucide:activity"
-                        title="Testing & Commissioning"
-                        description="On-site validation to ensure systems operate safely and meet performance specifications."
-                        points={[
-                            "SAT/FAT execution",
-                            "Relay injection testing",
-                            "Troubleshooting & diagnostics",
-                        ]}
-                        color="blue"
-                    />
-
-                    <ServiceCard
-                        icon="lucide:shield-check"
-                        title="Compliance & Safety"
-                        description="Ensuring infrastructure meets international safety standards and local grid codes."
-                        points={[
-                            "Regulatory compliance audits",
-                            "Safety instrumented systems",
-                            "Quality assurance",
-                        ]}
-                        color="rose"
-                    />
+                    {SERVICES.map((service) => (
+                        <ServiceCard key={service.title} {...service} />
+                    ))}
                 </div>
             </div>
         </section>

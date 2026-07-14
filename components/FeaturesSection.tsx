@@ -28,18 +28,18 @@ export default function FeaturesSection() {
                                 </span>
                             </div>
                             <h3 className="text-3xl font-medium text-white tracking-tight mb-3">
-                                Nordic Offshore Wind Link
+                                50.22 MWp Solar PV — Bui Power Authority
                             </h3>
                             <p className="text-slate-400 max-w-md">
-                                Engineering the HVDC converter stations for one of the world&apos;s
-                                largest offshore wind farms, delivering 1.2GW of clean energy to
-                                the mainland grid.
+                                Solar PV design management for one of Ghana&apos;s flagship
+                                utility-scale renewable installations, strengthening the national
+                                grid with clean generation capacity.
                             </p>
                             <Link
-                                href="#"
+                                href="/projects/bui-50mwp-solar"
                                 className="inline-flex items-center gap-2 text-white mt-6 text-sm font-medium hover:text-cyan-400 transition-colors"
                             >
-                                Read Case Study <Icon icon="solar:arrow-right-linear" />
+                                View Project <Icon icon="solar:arrow-right-linear" />
                             </Link>
                         </div>
                     </div>
@@ -48,26 +48,27 @@ export default function FeaturesSection() {
                     <div className="flex flex-col gap-6">
                         <div className="flex-1 rounded-3xl bg-[#050912] border border-white/5 p-8 flex flex-col justify-center relative overflow-hidden group hover:border-cyan-500/20 transition-colors">
                             <div className="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-40 transition-opacity">
-                                <Icon icon="solar:settings-linear" width="64" className="text-cyan-900" />
+                                <Icon icon="solar:users-group-rounded-linear" width="64" className="text-cyan-900" />
                             </div>
                             <h4 className="text-xl font-medium text-white tracking-tight mb-2">
-                                Smart Maintenance
+                                Multidisciplinary Team
                             </h4>
                             <p className="text-sm text-slate-400">
-                                Predictive analytics using IoT sensors to reduce downtime by 40%.
+                                Seven licensed specialists across power, MEP, and solar — PMP,
+                                ASHRAE, and GhIE credentialed.
                             </p>
                         </div>
 
                         <div className="flex-1 rounded-3xl bg-[#050912] border border-white/5 p-8 flex flex-col justify-center relative overflow-hidden group hover:border-cyan-500/20 transition-colors">
                             <div className="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-40 transition-opacity">
-                                <Icon icon="solar:globe-linear" width="64" className="text-cyan-900" />
+                                <Icon icon="solar:shield-check-linear" width="64" className="text-cyan-900" />
                             </div>
                             <h4 className="text-xl font-medium text-white tracking-tight mb-2">
-                                Global Standards
+                                Standards &amp; Compliance
                             </h4>
                             <p className="text-sm text-slate-400">
-                                ISO 9001 certified engineering processes ensuring consistency
-                                worldwide.
+                                Delivery to FIDIC, IEC/BS, and ASHRAE standards, backed by full
+                                professional indemnity cover.
                             </p>
                         </div>
                     </div>

@@ -7,34 +7,34 @@ export default function StatsSection() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                     <div className="flex flex-col items-start space-y-1">
                         <span className="text-3xl font-medium text-white tracking-tight">
-                            2.4<span className="text-slate-500">GW</span>
+                            25<span className="text-slate-500">+</span>
                         </span>
                         <span className="text-xs text-slate-500 uppercase tracking-wide">
-                            Power Generated
+                            Years of Excellence
                         </span>
                     </div>
                     <div className="flex flex-col items-start space-y-1">
                         <span className="text-3xl font-medium text-white tracking-tight">
-                            150<span className="text-slate-500">+</span>
+                            38<span className="text-slate-500">+</span>
                         </span>
                         <span className="text-xs text-slate-500 uppercase tracking-wide">
-                            Substations Built
+                            Years Senior Leadership
                         </span>
                     </div>
                     <div className="flex flex-col items-start space-y-1">
                         <span className="text-3xl font-medium text-white tracking-tight">
-                            99.9<span className="text-slate-500">%</span>
+                            50<span className="text-slate-500">MWp</span>
                         </span>
                         <span className="text-xs text-slate-500 uppercase tracking-wide">
-                            Uptime Reliability
+                            Largest Solar PV
                         </span>
                     </div>
                     <div className="flex flex-col items-start space-y-1">
                         <span className="text-3xl font-medium text-white tracking-tight">
-                            30<span className="text-slate-500">yrs</span>
+                            7
                         </span>
                         <span className="text-xs text-slate-500 uppercase tracking-wide">
-                            Industry Heritage
+                            Key Specialists
                         </span>
                     </div>
                 </div>

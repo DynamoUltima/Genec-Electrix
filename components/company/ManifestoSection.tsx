@@ -1,6 +1,5 @@
 import { Icon } from "@iconify/react";
 import React from "react";
-import Image from "next/image";
 
 export default function ManifestoSection() {
     return (
@@ -9,7 +8,7 @@ export default function ManifestoSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                     <div className="order-2 lg:order-1 relative">
                         {/* Abstract Graphic representing the company structure */}
-                        <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-slate-900 aspect-[4/3] group">
+                        <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-slate-900 aspect-4/3 group">
                             <div className="absolute inset-0 bg-grid-small opacity-30" />
 
                             {/* Stylized decorative elements */}
@@ -21,13 +20,6 @@ export default function ManifestoSection() {
                                 <div className="absolute w-64 h-px bg-linear-to-r from-transparent via-indigo-500/50 to-transparent -rotate-45" />
                             </div>
 
-                            <Image
-                                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2301&auto=format&fit=crop"
-                                alt="Office"
-                                fill
-                                className="absolute inset-0 object-cover mix-blend-overlay opacity-50 grayscale transition-[filter] duration-300 group-hover:grayscale-0"
-                            />
-
                             <div className="absolute bottom-6 left-6 right-6 p-4 bg-slate-950/80 backdrop-blur border border-white/10 rounded-xl">
                                 <div className="flex items-center gap-3">
                                     <div className="w-10 h-10 rounded-full bg-cyan-950/50 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
@@ -38,10 +30,10 @@ export default function ManifestoSection() {
                                     </div>
                                     <div>
                                         <div className="text-sm text-white font-medium">
-                                            Employee Owned
+                                            Founder-Led
                                         </div>
                                         <div className="text-xs text-slate-500">
-                                            Since inception in 2008
+                                            Ing. Isaac Ofosu Appiah, CEO
                                         </div>
                                     </div>
                                 </div>
@@ -51,34 +43,35 @@ export default function ManifestoSection() {
 
                     <div className="order-1 lg:order-2">
                         <h2 className="text-3xl md:text-4xl font-medium text-white tracking-tight mb-6">
-                            Driven by complexity, <br />
-                            grounded in physics.
+                            Rigorous standards, <br />
+                            interdisciplinary depth.
                         </h2>
                         <div className="space-y-6 text-slate-400 text-lg font-light leading-relaxed">
                             <p>
-                                GENEC began as a boutique consultancy solving niche high-voltage
-                                problems. Today, we are a comprehensive engineering partner for
-                                utilities, IPPs, and industrial giants facing the challenges of
-                                the energy transition.
+                                GENEC Electrix operates across the public and private sectors in
+                                Ghana, engaging on complex infrastructure projects that demand
+                                rigorous technical standards, international code compliance, and
+                                disciplined project controls.
                             </p>
                             <p>
-                                We believe that the future of energy isn&apos;t just about new
-                                sources—it&apos;s about intelligent integration. Our team combines
-                                deep domain expertise in power systems with modern computation
-                                to solve problems others walk away from.
+                                We maintain strategic alliances with specialist firms in aviation
+                                infrastructure, quantity surveying, structural engineering,
+                                geotechnics, and environmental management — enabling us to
+                                mobilise comprehensive interdisciplinary teams for major capital
+                                projects.
                             </p>
                         </div>
                         <div className="mt-8 pt-8 border-t border-white/5 flex gap-8">
                             <div>
                                 <h4 className="text-white font-medium mb-1">Our DNA</h4>
                                 <p className="text-sm text-slate-500">
-                                    Precision, Integrity, Innovation
+                                    Integrity, Excellence, Innovation
                                 </p>
                             </div>
                             <div>
-                                <h4 className="text-white font-medium mb-1">Our Goal</h4>
+                                <h4 className="text-white font-medium mb-1">Our Focus</h4>
                                 <p className="text-sm text-slate-500">
-                                    Net-zero infrastructure by 2040
+                                    Power, MEP &amp; renewable energy systems
                                 </p>
                             </div>
                         </div>

@@ -7,7 +7,7 @@ export default function ValuesSection() {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="mb-12">
                     <h2 className="text-2xl font-medium text-white tracking-tight mb-2">
-                        Our Principles
+                        Our Core Values
                     </h2>
                     <p className="text-slate-400 text-sm">
                         The framework that guides every decision we make.
@@ -20,16 +20,16 @@ export default function ValuesSection() {
                         <div className="absolute inset-0 bg-grid-small opacity-0 group-hover:opacity-20 transition-opacity" />
                         <div className="relative z-10 h-full flex flex-col justify-between">
                             <div className="w-12 h-12 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-                                <Icon icon="solar:leaf-linear" width="24" />
+                                <Icon icon="solar:shield-star-linear" width="24" />
                             </div>
                             <div>
                                 <h3 className="text-xl font-medium text-white mb-2">
-                                    Sustainable by Design
+                                    Integrity
                                 </h3>
                                 <p className="text-slate-400 max-w-md">
-                                    We prioritize solutions that reduce carbon footprint and ensure
-                                    long-term environmental viability, not just immediate
-                                    operational success.
+                                    Transparent and ethical professional conduct at all times —
+                                    the foundation of every client and stakeholder relationship
+                                    we build.
                                 </p>
                             </div>
                         </div>
@@ -39,15 +39,15 @@ export default function ValuesSection() {
                     <div className="relative group p-8 rounded-2xl border border-white/10 bg-linear-to-br from-white/[0.03] to-transparent overflow-hidden hover:border-white/20 transition-all">
                         <div className="relative z-10 h-full flex flex-col justify-between">
                             <div className="w-12 h-12 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
-                                <Icon icon="solar:shield-check-linear" width="24" />
+                                <Icon icon="solar:medal-ribbon-linear" width="24" />
                             </div>
                             <div>
                                 <h3 className="text-xl font-medium text-white mb-2">
-                                    Safety First
+                                    Excellence
                                 </h3>
                                 <p className="text-slate-400 text-sm">
-                                    Uncompromising standards for the safety of our people and your
-                                    assets.
+                                    Uncompromising standards in design and delivery on every
+                                    assignment.
                                 </p>
                             </div>
                         </div>
@@ -61,11 +61,11 @@ export default function ValuesSection() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-medium text-white mb-2">
-                                    Radical Innovation
+                                    Innovation
                                 </h3>
                                 <p className="text-slate-400 text-sm">
-                                    Challenging the &ldquo;way it&apos;s always been done&rdquo; with data-driven
-                                    engineering.
+                                    Embracing smart, sustainable engineering solutions across
+                                    power and MEP.
                                 </p>
                             </div>
                         </div>
@@ -80,11 +80,12 @@ export default function ValuesSection() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-medium text-white mb-2">
-                                    Transparent Partnership
+                                    Partnership
                                 </h3>
                                 <p className="text-slate-400 max-w-md">
-                                    We operate as an extension of your team. No black boxes, no
-                                    hidden agendas. Just clear, honest engineering advice.
+                                    Building lasting client and stakeholder relationships. We
+                                    operate as an extension of your team — clear, honest
+                                    engineering advice, start to finish.
                                 </p>
                             </div>
                         </div>

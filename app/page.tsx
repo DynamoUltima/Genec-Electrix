@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StatsSection from "@/components/StatsSection";
+import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import IndustrialSupply, { type SupplyProduct } from "@/components/IndustrialSupply";
 import StartProjectModal from "@/components/modals/StartProjectModal";
@@ -37,6 +38,8 @@ export default function Home() {
         />
 
         <StatsSection />
+
+        <AboutSection />
 
         <ServicesSection />
         

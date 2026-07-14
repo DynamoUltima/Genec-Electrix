@@ -15,8 +15,9 @@ export default function Footer() {
                             GENEC
                         </Link>
                         <p className="text-sm text-slate-500 max-w-xs mb-6">
-                            Leading the transition to a smarter, more resilient energy future
-                            through innovative engineering.
+                            A Ghanaian-owned multidisciplinary engineering and consultancy
+                            firm delivering power, MEP, and renewable energy solutions from
+                            Accra.
                         </p>
                         <div className="flex gap-4 text-slate-400">
                             <Link href="#" className="hover:text-white transition-colors">
@@ -48,22 +49,22 @@ export default function Footer() {
                         <ul className="space-y-3 text-sm text-slate-500">
                             <li>
                                 <Link href="/services" className="hover:text-cyan-400 transition-colors">
-                                    Grid Analysis
+                                    Power Systems
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#" className="hover:text-cyan-400 transition-colors">
-                                    High Voltage
+                                <Link href="/services" className="hover:text-cyan-400 transition-colors">
+                                    Mechanical &amp; MEP
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#" className="hover:text-cyan-400 transition-colors">
-                                    Renewables
+                                <Link href="/services" className="hover:text-cyan-400 transition-colors">
+                                    Renewable Energy
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#" className="hover:text-cyan-400 transition-colors">
-                                    Automation
+                                <Link href="/services" className="hover:text-cyan-400 transition-colors">
+                                    Construction Supervision
                                 </Link>
                             </li>
                         </ul>
@@ -122,7 +123,7 @@ export default function Footer() {
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-xs text-slate-600">
-                        © 2024 GENEC Engineering. All rights reserved.
+                        © 2026 GENEC Electrix Ltd. All rights reserved.
                     </p>
                     <div className="flex items-center gap-2 text-xs text-slate-600">
                         <span className="w-2 h-2 rounded-full bg-green-500"></span>
