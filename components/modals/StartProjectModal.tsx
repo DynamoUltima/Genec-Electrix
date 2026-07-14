@@ -1,3 +1,5 @@
+"use client";
+
 import { Icon } from "@iconify/react";
 import React, { useState } from "react";
 
@@ -6,15 +8,86 @@ interface StartProjectModalProps {
     onClose: () => void;
 }
 
+const INITIAL_FORM = {
+    projectType: "Grid Analysis",
+    location: "",
+    budget: "$50k - $200k",
+    description: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+};
+
+const PROJECT_OPTIONS = [
+    {
+        id: "Grid Analysis",
+        icon: "solar:graph-up-linear",
+        title: "Grid Analysis",
+        desc: "Load flow, stability, audits",
+    },
+    {
+        id: "High Voltage",
+        icon: "solar:bolt-circle-linear",
+        title: "High Voltage",
+        desc: "Substations, transmission",
+    },
+    {
+        id: "Renewable Integration",
+        icon: "solar:sun-2-linear",
+        title: "Renewable Integration",
+        desc: "Solar, Wind, BESS",
+    },
+    {
+        id: "Automation & SCADA",
+        icon: "solar:server-square-linear",
+        title: "Automation & SCADA",
+        desc: "Control systems, monitoring",
+    },
+];
+
 export default function StartProjectModal({
     isOpen,
     onClose,
 }: StartProjectModalProps) {
     const [currentStep, setCurrentStep] = useState(1);
+    const [form, setForm] = useState(INITIAL_FORM);
+    const [submitting, setSubmitting] = useState(false);
+    const [error, setError] = useState("");
     const totalSteps = 3;
 
+    const update = (field: keyof typeof INITIAL_FORM, value: string) =>
+        setForm((prev) => ({ ...prev, [field]: value }));
+
+    const handleSubmit = async () => {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+            setError("Please enter a valid work email.");
+            return;
+        }
+        setSubmitting(true);
+        setError("");
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ type: "project", ...form }),
+            });
+            if (!res.ok) {
+                const data = await res.json().catch(() => ({}));
+                throw new Error(data.error || "Something went wrong.");
+            }
+            setCurrentStep(totalSteps + 1);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : "Something went wrong.");
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
     const handleNext = () => {
-        if (currentStep <= totalSteps) {
+        if (currentStep === totalSteps) {
+            handleSubmit();
+        } else if (currentStep < totalSteps) {
             setCurrentStep((prev) => prev + 1);
         }
     };
@@ -27,6 +100,9 @@ export default function StartProjectModal({
 
     const handleReset = () => {
         setCurrentStep(1);
+        setForm(INITIAL_FORM);
+        setError("");
+        setSubmitting(false);
         onClose();
     };
 
@@ -83,39 +159,15 @@ export default function StartProjectModal({
                                 </p>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    {[
-                                        {
-                                            id: "grid",
-                                            icon: "solar:graph-up-linear",
-                                            title: "Grid Analysis",
-                                            desc: "Load flow, stability, audits",
-                                        },
-                                        {
-                                            id: "hvdc",
-                                            icon: "solar:bolt-circle-linear",
-                                            title: "High Voltage",
-                                            desc: "Substations, transmission",
-                                        },
-                                        {
-                                            id: "renewable",
-                                            icon: "solar:sun-2-linear",
-                                            title: "Renewable Integration",
-                                            desc: "Solar, Wind, BESS",
-                                        },
-                                        {
-                                            id: "automation",
-                                            icon: "solar:server-square-linear",
-                                            title: "Automation & SCADA",
-                                            desc: "Control systems, monitoring",
-                                        },
-                                    ].map((option) => (
+                                    {PROJECT_OPTIONS.map((option) => (
                                         <label key={option.id} className="cursor-pointer group">
                                             <input
                                                 type="radio"
                                                 name="project_type"
                                                 value={option.id}
+                                                checked={form.projectType === option.id}
+                                                onChange={() => update("projectType", option.id)}
                                                 className="peer sr-only project-radio"
-                                                defaultChecked={option.id === "grid"}
                                             />
                                             <div className="p-4 rounded-xl border border-white/10 bg-white/2 hover:bg-white/4 transition-all group-hover:border-white/20 h-full flex items-start gap-4 peer-checked:border-cyan-400 peer-checked:bg-cyan-500/5">
                                                 <Icon
@@ -160,7 +212,9 @@ export default function StartProjectModal({
                                             />
                                             <input
                                                 type="text"
-                                                placeholder="e.g. Oslo, Norway"
+                                                value={form.location}
+                                                onChange={(e) => update("location", e.target.value)}
+                                                placeholder="e.g. Accra, Ghana"
                                                 className="w-full bg-slate-950 border border-white/10 rounded-lg py-2.5 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all placeholder-slate-600"
                                             />
                                         </div>
@@ -175,7 +229,11 @@ export default function StartProjectModal({
                                                 icon="solar:dollar-linear"
                                                 className="absolute left-3 top-3 text-slate-500"
                                             />
-                                            <select className="w-full bg-slate-950 border border-white/10 rounded-lg py-2.5 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all appearance-none cursor-pointer">
+                                            <select
+                                                value={form.budget}
+                                                onChange={(e) => update("budget", e.target.value)}
+                                                className="w-full bg-slate-950 border border-white/10 rounded-lg py-2.5 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all appearance-none cursor-pointer"
+                                            >
                                                 <option>$50k - $200k</option>
                                                 <option>$200k - $1M</option>
                                                 <option>$1M - $10M</option>
@@ -194,6 +252,8 @@ export default function StartProjectModal({
                                         </label>
                                         <textarea
                                             rows={3}
+                                            value={form.description}
+                                            onChange={(e) => update("description", e.target.value)}
                                             placeholder="Describe the key technical challenges..."
                                             className="w-full bg-slate-950 border border-white/10 rounded-lg py-3 px-4 text-sm text-white focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all placeholder-slate-600 resize-none"
                                         />
@@ -220,6 +280,8 @@ export default function StartProjectModal({
                                             </label>
                                             <input
                                                 type="text"
+                                                value={form.firstName}
+                                                onChange={(e) => update("firstName", e.target.value)}
                                                 className="w-full bg-slate-950 border border-white/10 rounded-lg py-2.5 px-4 text-sm text-white focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all"
                                             />
                                         </div>
@@ -229,6 +291,8 @@ export default function StartProjectModal({
                                             </label>
                                             <input
                                                 type="text"
+                                                value={form.lastName}
+                                                onChange={(e) => update("lastName", e.target.value)}
                                                 className="w-full bg-slate-950 border border-white/10 rounded-lg py-2.5 px-4 text-sm text-white focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all"
                                             />
                                         </div>
@@ -245,6 +309,9 @@ export default function StartProjectModal({
                                             />
                                             <input
                                                 type="email"
+                                                required
+                                                value={form.email}
+                                                onChange={(e) => update("email", e.target.value)}
                                                 placeholder="name@company.com"
                                                 className="w-full bg-slate-950 border border-white/10 rounded-lg py-2.5 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all placeholder-slate-600"
                                             />
@@ -262,10 +329,16 @@ export default function StartProjectModal({
                                             />
                                             <input
                                                 type="text"
+                                                value={form.company}
+                                                onChange={(e) => update("company", e.target.value)}
                                                 className="w-full bg-slate-950 border border-white/10 rounded-lg py-2.5 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all"
                                             />
                                         </div>
                                     </div>
+
+                                    {error && (
+                                        <p className="text-xs text-rose-400">{error}</p>
+                                    )}
                                 </div>
                             </div>
                         )}
@@ -308,13 +381,20 @@ export default function StartProjectModal({
                         <button
                             type="button"
                             onClick={handleNext}
-                            className="bg-cyan-500 hover:bg-cyan-400 text-black text-sm font-medium px-6 py-2.5 rounded-full transition-colors flex items-center gap-2 cursor-pointer"
+                            disabled={submitting}
+                            className="bg-cyan-500 hover:bg-cyan-400 disabled:opacity-60 disabled:cursor-not-allowed text-black text-sm font-medium px-6 py-2.5 rounded-full transition-colors flex items-center gap-2 cursor-pointer"
                         >
-                            {currentStep === totalSteps ? "Submit Request" : "Next Step"}
+                            {currentStep === totalSteps
+                                ? submitting
+                                    ? "Sending…"
+                                    : "Submit Request"
+                                : "Next Step"}
                             <Icon
                                 icon={
                                     currentStep === totalSteps
-                                        ? "solar:plain-linear"
+                                        ? submitting
+                                            ? "svg-spinners:180-ring"
+                                            : "solar:plain-linear"
                                         : "solar:arrow-right-linear"
                                 }
                             />
