@@ -48,12 +48,13 @@ export default function LocationsCTA() {
                                     className="text-cyan-400 mt-1 shrink-0"
                                 />
                                 <div>
-                                    <div className="text-white font-medium text-sm break-all">
-                                        info.genecelectrix@gmail.com
-                                    </div>
-                                    <div className="text-slate-500 text-xs">
-                                        office.genec23@gmail.com
-                                    </div>
+                                    <a
+                                        href="mailto:info@genecelectrix.com"
+                                        className="text-white font-medium text-sm break-all hover:text-cyan-400 transition-colors"
+                                    >
+                                        info@genecelectrix.com
+                                    </a>
+                                    <div className="text-slate-500 text-xs">Email</div>
                                 </div>
                             </div>
                         </div>
