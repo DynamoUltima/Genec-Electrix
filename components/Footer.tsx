@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -8,11 +9,14 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
                     <div className="col-span-2 lg:col-span-2">
-                        <Link
-                            href="#"
-                            className="text-xl font-semibold tracking-tighter text-white mb-6 block"
-                        >
-                            GENEC
+                        <Link href="#" className="mb-6 inline-block">
+                            <Image
+                                src="/genec-logo.jpg"
+                                alt="GENEC Electrix"
+                                width={640}
+                                height={360}
+                                className="h-10 w-auto"
+                            />
                         </Link>
                         <p className="text-sm text-slate-500 max-w-xs mb-6">
                             A Ghanaian-owned multidisciplinary engineering and consultancy

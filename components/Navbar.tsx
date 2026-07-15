@@ -1,6 +1,7 @@
 "use client";
 
 import { Icon } from "@iconify/react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -17,9 +18,16 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                 <Link
                     href="/"
-                    className="text-xl font-semibold tracking-tighter text-white hover:text-cyan-400 transition-colors"
+                    className="flex items-center transition-opacity hover:opacity-80"
                 >
-                    GENEC
+                    <Image
+                        src="/genec-logo.jpg"
+                        alt="GENEC Electrix"
+                        width={640}
+                        height={360}
+                        priority
+                        className="h-9 w-auto"
+                    />
                 </Link>
 
                 <div className="hidden md:flex items-center space-x-8 text-sm font-medium">
